@@ -55,7 +55,7 @@ NPM_FILES=\
   "COPYING" \
   "AUTHORS.rst" \
   "dist" \
-  "Token.sol" \
+  "ERC20.sol" \
   "data-get" \
   "eslint.config.mjs" \
   "fs-worker.webpack.config.cjs" \
@@ -92,14 +92,14 @@ install-scripts:
 	    "$(LIB_DIR)/nodejs/$${_file}"; \
 	  ln \
 	    -s \
-            "$(PREFIX)/lib/$(_PROJECT_NPM)/nodejs/$${_file}" \
+            "$(PREFIX)/lib/$(_PROJECT)/nodejs/$${_file}" \
 	    "$(LIB_DIR)/$${_file}" || \
 	  true; \
 	done
 	# ln \
 	#   -s \
-	#   "$(PREFIX)/lib/$(_PROJECT_NPM)/node/lib$(_PROJECT_NPM)" \
-	#   "$(LIB_DIR)/$(_PROJECT_NPM)-js" || \
+	#   "$(PREFIX)/lib/$(_PROJECT)/node/lib$(_PROJECT)" \
+	#   "$(LIB_DIR)/$(_PROJECT)-js" || \
 	# true
 
 build-npm:
@@ -123,7 +123,7 @@ build-npm:
 	npm \
 	  pack; \
 	mv \
-	  "$(_PROJECT_NPM)-$${_version}.tgz" \
+	  "$(_PROJECT)-$${_version}.tgz" \
 	  ".."
 
 install-npm:
@@ -141,7 +141,7 @@ install-npm:
 	npm \
 	  install \
 	    "$${_npm_opts[@]}" \
-	    "$(_PROJECT_NPM)-$${_version}.tgz"; \
+	    "$(_PROJECT)-$${_version}.tgz"; \
 	$(_INSTALL_DIR) \
 	  "$(DESTDIR)$(PREFIX)/lib"; \
 	ln \

@@ -31,6 +31,36 @@ This is an ERC-20 smart contract by OpenZeppelin
 as far as I know merged in
 a single file.
 
+This repository contains resources to work with
+an ERC-20 smart contract on an Ethereum Virtual
+Machine compatible network.
+
+In particular it contains a
+Javascript module which contains a load function
+for ERC-20 contracts data, such as the ERC-20
+contract source, its ABI and bytecode.
+
+The data is generated at package build time
+using
+[Solidity Compiler](
+  https://github.com/themartiancompany/solidity-compiler).
+
+# Build
+
+To build the module one can use GNU Make
+
+```bash
+make \
+  build-npm
+```
+
+or npm
+
+```bash
+npm \
+  install
+```
+
 # License
 
 This originally MIT licensed file is distributed

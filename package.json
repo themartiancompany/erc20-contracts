@@ -13,9 +13,9 @@
     "AUTHORS.rst",
     "COPYING",
     "README.md",
-    "Token.sol",
-    "Token.abi.json",
-    "Token.bin",
+    "ERC20.sol",
+    "ERC20.abi.json",
+    "ERC20.runtime.bin",
     "dist",
     "erc20-contracts",
     "lib",
@@ -62,7 +62,7 @@
     "commonjs",
   "scripts": {
     "build-contracts":
-      "solidity-compiler -v -b 'solc' Token.sol",
+      "solidity-compiler -v -b 'solc' -e 'istanbul' -C 0.7.5 Token.sol",
     "build":
       "npm run build-contracts",
     "publish-npm":
