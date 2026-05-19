@@ -1,12 +1,8 @@
-/**
- *Submitted for verification at Etherscan.io on 2021-04-23
-*/
-
-// File: @openzeppelin/contracts/utils/Context.sol
+// File: @openzeppelin/contracts/utils/Token.sol
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.6.0 <0.9.0;
 
 /*
  * @dev Provides information about the current execution context, including the
@@ -32,7 +28,7 @@ abstract contract Context {
 // File: @openzeppelin/contracts/token/ERC20/IERC20.sol
 
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.6.0 <0.9.0;
 
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
@@ -111,7 +107,7 @@ interface IERC20 {
 // File: @openzeppelin/contracts/math/SafeMath.sol
 
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.6.0 <0.9.0;
 
 /**
  * @dev Wrappers over Solidity's arithmetic operations with added overflow
@@ -327,7 +323,7 @@ library SafeMath {
 // File: @openzeppelin/contracts/token/ERC20/ERC20.sol
 
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.6.0 <0.9.0;
 
 
 
@@ -631,14 +627,14 @@ contract ERC20 is Context, IERC20 {
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual { }
 }
 
-// File: contracts/DOGELON.sol
+// File: contracts/TOKEN.sol
 
-// contracts/DOGELON.sol
-pragma solidity ^0.7.1;
+// contracts/Token.sol
+pragma solidity ^0.8.30;
 
 
-contract Dogelon is ERC20 {
-    constructor() ERC20("Dogelon", "ELON") public {
+contract Token is ERC20 {
+    constructor() ERC20("Token", "TOKEN") public {
         _mint(msg.sender, 10e32);
     }
 }
