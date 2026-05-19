@@ -1,6 +1,6 @@
 // File: @openzeppelin/contracts/utils/Token.sol
 
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: AGPL3
 
 pragma solidity >=0.6.0 <0.9.0;
 
