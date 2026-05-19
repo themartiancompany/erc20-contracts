@@ -1,0 +1,73 @@
+{ "name": "erc20-contracts",
+  "version":
+    "0.0.1",
+  "description":
+    "The OJavaScript programs and libraries to enable seamless development of native computer applications designed to interact with Ethereum *RC-20 tokens (ERC-20, BRC-20, etc.) on Ethereum Virtual Machine-compatible networks.",
+  "funding": {
+    "type":
+      "patreon",
+    "url":
+      "https://patreon.com/tallero"
+  },
+  "files": [
+    "AUTHORS.rst",
+    "COPYING",
+    "README.md",
+    "Token.sol",
+    "Token.abi.json",
+    "Token.bin",
+    "dist",
+    "erc20-contracts",
+    "lib",
+    "package.json",
+    "webpack.config.cjs"
+  ],
+  "keywords": [
+    "ur",
+    "themartiancompany",
+    "dogeos",
+    "ethereum",
+    "erc-20",
+    "evmfs"
+  ],
+  "main":
+    "./erc20-contracts",
+  "homepage":
+    "https://github.com/themartiancompany/erc20-contracts",
+  "bugs": {
+    "url":
+      "https://github.com/themartiancompany/erc20-contracts/issues"
+  },
+  "repository": {
+    "type":
+      "git",
+    "url":
+      "git+https://github.com/themartiancompany/erc20-contracts.git"
+  },
+  "license":
+    "AGPL-3.0-or-later",
+  "author": {
+    "name":
+      "Pellegrino Prevete",
+    "email":
+      "pellegrinoprevete@gmail.com",
+    "url":
+      "https://github.com/tallero"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  },
+  "type":
+    "commonjs",
+  "scripts": {
+    "build-contracts":
+      "solidity-compiler -v -b 'solc' Token.sol",
+    "build":
+      "npm run build-contracts",
+    "publish-npm":
+      "npm run build && npm publish --access public",
+    "test":
+      "echo \"Error: no test specified\" && exit 1"
+  }
+}
