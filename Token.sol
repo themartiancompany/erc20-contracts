@@ -630,7 +630,7 @@ contract ERC20 is Context, IERC20 {
 // File: contracts/TOKEN.sol
 
 // contracts/Token.sol
-pragma solidity ^0.8.30;
+pragma solidity ^0.9.0;
 
 
 contract Token is ERC20 {
