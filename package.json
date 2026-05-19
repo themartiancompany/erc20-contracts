@@ -31,7 +31,7 @@
     "evmfs"
   ],
   "main":
-    "./erc20-contracts",
+    "./data-get",
   "homepage":
     "https://github.com/themartiancompany/erc20-contracts",
   "bugs": {

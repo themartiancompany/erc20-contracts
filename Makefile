@@ -56,7 +56,7 @@ NPM_FILES=\
   "AUTHORS.rst" \
   "dist" \
   "Token.sol" \
-  "erc20-contracts" \
+  "data-get" \
   "eslint.config.mjs" \
   "fs-worker.webpack.config.cjs" \
   "package.json" \
