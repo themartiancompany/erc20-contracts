@@ -55,7 +55,7 @@ NPM_FILES=\
   "COPYING" \
   "AUTHORS.rst" \
   "dist" \
-  "ERC20.sol" \
+  "Token.sol" \
   "data-get" \
   "eslint.config.mjs" \
   "fs-worker.webpack.config.cjs" \

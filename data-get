@@ -46,54 +46,42 @@ _path_join =
   _libcrash_module._path_join;
 
 function
-  _data_split_get(
-    _chain_id) {
-  const
-    _path =
-      _path_join( [
-        __dirname,
-        "chains",
-        `${_chain_id}.json`
-      ]);
-  const
-    _data =
-      _json_read(
-        _path);
-  return _data;
-}
-
-function
   _data_get(
-   _chain_id) {
+    _data_type,
+    _output_type) {
   let
     _data;
-  if ( typeof(
-         _chain_id) == "undefined" ||
-       _chain_id == "" ) {
-    _data =
-      _data_unified_get();
+  if (typeof(
+        _data_type) == "undefined" ||
+     _data_type == "" ) {
+    _data_type =
+      "abi";
   }
-  else {
-    _data =
-      _data_split_get(
-        _chain_id);
+  if (typeof(
+        _output_type) == "undefined" ||
+     _output_type == "" ) {
+    _output_type =
+      "path";
   }
-  return _data;
-}
-
-function
-  _data_unified_get() {
-  const
-    _path =
-      _path_join( [
-        __dirname,
-        "chains",
-        `chains.json`
+  if ( _data_type == "abi" ) {
+    const
+      _path =
+        _path_join( [
+          __dirname,
+          "Token.abi.json",
+          `chains.json`
       ]);
-  const
+  }
+  if ( _output_type == "path" ) {
+	    _out =
+    _data =
+      _path;
+  }
+  else if ( _output_type == "object" ) {
     _data =
       _json_read(
-        _path);
+        "Token.abi.json");
+  }
   return _data;
 }
 
