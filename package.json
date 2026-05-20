@@ -57,6 +57,7 @@
   "devDependencies": {
   },
   "dependencies": {
+    ""
   },
   "type":
     "commonjs",

@@ -47,10 +47,17 @@ _path_join =
 
 function
   _data_get(
+    _contract_name,
     _data_type,
     _output_type) {
   let
     _data;
+  if (typeof(
+        _contract_name) == "undefined" ||
+     _contract_name == "" ) {
+    _contract_name =
+      "Token";
+  }
   if (typeof(
         _data_type) == "undefined" ||
      _data_type == "" ) {
@@ -68,19 +75,33 @@ function
       _path =
         _path_join( [
           __dirname,
-          "Token.abi.json",
-          `chains.json`
+          `${_contract_name}.abi.json`
+      ]);
+  }
+  else if ( _data_type == "source" ) {
+    const
+      _path =
+        _path_join( [
+          __dirname,
+          `${_contract_name}.sol`
+      ]);
+  }
+  else if ( _data_type == "bytecode" ) {
+    const
+      _path =
+        _path_join( [
+          __dirname,
+          `${_contract_name}.bin`
       ]);
   }
   if ( _output_type == "path" ) {
-	    _out =
     _data =
       _path;
   }
   else if ( _output_type == "object" ) {
     _data =
       _json_read(
-        "Token.abi.json");
+        _path);
   }
   return _data;
 }
@@ -88,8 +109,4 @@ function
 module.exports = {
   _data_get:
     _data_get,
-  _data_split_get:
-    _data_split_get,
-  _data_unified_get:
-    _data_unified_get
 };
