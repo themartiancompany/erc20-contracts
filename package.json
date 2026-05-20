@@ -13,6 +13,7 @@
     "AUTHORS.rst",
     "COPYING",
     "README.md",
+    "data-get",
     "Token.sol",
     "Token.abi.json",
     "Token.runtime.bin",
