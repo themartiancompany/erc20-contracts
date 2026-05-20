@@ -1,6 +1,6 @@
 { "name": "erc20-contracts",
   "version":
-    "0.0.1",
+    "0.0.3",
   "description":
     "The OJavaScript programs and libraries to enable seamless development of native computer applications designed to interact with Ethereum *RC-20 tokens (ERC-20, BRC-20, etc.) on Ethereum Virtual Machine-compatible networks.",
   "funding": {
@@ -14,9 +14,9 @@
     "COPYING",
     "README.md",
     "data-get",
+    "Token.bin",
     "Token.sol",
     "Token.abi.json",
-    "Token.runtime.bin",
     "dist",
     "erc20-contracts",
     "lib",
@@ -56,17 +56,36 @@
       "https://github.com/tallero"
   },
   "devDependencies": {
+    "crash-js-webpack":
+      "^0.0.9",
+    "flatted":
+      "^3.2.9",
+    "eslint":
+      "^10.0.3",
+    "globals":
+      "^17.3.0",
+    "@eslint/js":
+      "^10.0.1",
+    "safely-serve":
+      "^0.0.9",
+    "webpack":
+      "^5.102.1",
+    "webpack-cli":
+      "^6.0.1"
   },
   "dependencies": {
-    ""
+    "crash-js":
+      "^0.1.107"
   },
   "type":
     "commonjs",
   "scripts": {
     "build-contracts":
       "solidity-compiler -v -b 'solc' -e 'istanbul' -C 0.7.5 Token.sol",
+    "build-lib":
+      "npx webpack --mode 'production' --config 'webpack.config.cjs' --stats-error-details && mv 'data-get.js' 'dist/erc20-contracts'&& cp Token.{'abi.json','bin','sol'} dist/erc20-contracts",
     "build":
-      "npm run build-contracts",
+      "npm run build-contracts && npm run build-lib",
     "publish-npm":
       "npm run build && npm publish --access public",
     "test":
