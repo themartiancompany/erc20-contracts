@@ -104,6 +104,9 @@ install-scripts:
 
 build-npm:
 
+	mkdir \
+	  -p \
+	  "build"; \
 	cp \
 	  -r \
 	  $(NPM_FILES) \
