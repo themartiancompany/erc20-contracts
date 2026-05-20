@@ -29,7 +29,9 @@
     "dogeos",
     "ethereum",
     "erc-20",
-    "evmfs"
+    "ethereum-contracts",
+    "evmfs",
+    "hip"
   ],
   "main":
     "./data-get",
