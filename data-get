@@ -57,7 +57,8 @@ function
     _data_type,
     _output_type) {
   let
-    _data;
+    _data,
+    _path;
   if (typeof(
         _contract_name) == "undefined" ||
      _contract_name == "" ) {
@@ -77,36 +78,32 @@ function
       "path";
   }
   if ( _data_type == "abi" ) {
-    const
-      _path =
-        _path_join( [
-          __dirname,
-          `${_contract_name}.abi.json`
-      ]);
+    _path =
+      _path_join( [
+        __dirname,
+        `${_contract_name}.abi.json`
+    ]);
   }
   else if ( _data_type == "source" ) {
-    const
-      _path =
-        _path_join( [
-          __dirname,
-          `${_contract_name}.sol`
-      ]);
+    _path =
+      _path_join( [
+        __dirname,
+        `${_contract_name}.sol`
+    ]);
   }
   else if ( _data_type == "bytecode" ) {
-    const
-      _path =
-        _path_join( [
-          __dirname,
-          `${_contract_name}.bin`
-      ]);
+    _path =
+      _path_join( [
+        __dirname,
+        `${_contract_name}.bin`
+    ]);
   }
   else if ( _data_type == "compiler-output" ) {
-    const
-      _path =
-        _path_join( [
-          __dirname,
-          `${_contract_name}.json`
-      ]);
+    _path =
+      _path_join( [
+        __dirname,
+        `${_contract_name}.json`
+    ]);
   }
   else {
     const
