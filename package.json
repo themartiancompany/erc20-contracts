@@ -86,11 +86,13 @@
     "build-contracts":
       "solidity-compiler -v -b 'hardhat' -e 'istanbul' -C '0.7.5' 'Token.sol' && solidity-compiler -v -b 'solc' -e 'istanbul' -C '0.7.5' 'Token.sol'",
     "build-lib":
-      "npx webpack --mode 'production' --config 'webpack.config.cjs' --stats-error-details && mv 'data-get.js' 'dist/erc20-contracts/erc20-contracts.js' && cp Token.{'abi.json','bin','json','sol'} dist/erc20-contracts",
+      "npx webpack --mode 'production' --config 'webpack.config.cjs' --stats-error-details && mv 'data-get.js' 'dist/erc20-contracts/erc20-contracts.js' && cp 'Token.'{'abi.json','bin','json','sol'} 'dist/erc20-contracts'",
     "build":
       "npm run build-contracts && npm run build-lib",
     "publish-npm":
       "npm run build && npm publish --access public",
+    "start":
+      "npx safely-serve 'dist/erc20-tools' --port 3000 --https --no-cache",
     "test":
       "echo \"Error: no test specified\" && exit 1"
   }
