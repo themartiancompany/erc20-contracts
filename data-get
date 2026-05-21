@@ -100,6 +100,14 @@ function
           `${_contract_name}.bin`
       ]);
   }
+  else if ( _data_type == "compiler-output" ) {
+    const
+      _path =
+        _path_join( [
+          __dirname,
+          `${_contract_name}.json`
+      ]);
+  }
   else {
     const
       _msg =
@@ -126,7 +134,19 @@ function
     else if ( _data_type == "bytecode" ) {
       _data =
         _file_read(
+          _path);
+    }
+    else if ( _data_type == "compiler-output" ) {
+      _data =
+        _json_read(
 	  _path);
+    }
+    else {
+      _msg =
+        `Uknown data type '${_data_type}'.`;
+      _msg_info(
+        _msg,
+        1);
     }
   }
   return _data;
