@@ -19,8 +19,6 @@
     "Token.abi.json",
     "Token.json",
     "dist",
-    "erc20-contracts",
-    "lib",
     "package.json",
     "webpack.config.cjs"
   ],
