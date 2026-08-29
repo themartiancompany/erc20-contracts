@@ -30,26 +30,23 @@
 
 const
   _libcrash_module =
-    require(
-      "crash-js");
+    await import(
+      "libcrash-js");
 /* global
      _json_read */
-/* eslint-disable-next-line
-     no-global-assign */
-_file_read =
-  _libcrash_module._file_read;
+const
+  _file_read =
+    _libcrash_module._file_read;
 /* global
      _json_read */
-/* eslint-disable-next-line
-     no-global-assign */
-_json_read =
-  _libcrash_module._json_read;
+const
+  _json_read =
+    _libcrash_module._json_read;
 /* global
      _path_join */
-/* eslint-disable-next-line
-     no-global-assign */
-_path_join =
-  _libcrash_module._path_join;
+const
+  _path_join =
+    _libcrash_module._path_join;
 
 function
   _data_get(
@@ -136,7 +133,7 @@ function
     else if ( _data_type == "compiler-output" ) {
       _data =
         _json_read(
-	  _path);
+          _path);
     }
     else {
       _msg =
@@ -149,7 +146,11 @@ function
   return _data;
 }
 
-module.exports = {
-  _data_get:
-    _data_get,
+export {
+  _data_get,
 };
+
+// module.exports = {
+//   _data_get:
+//     _data_get,
+// };
